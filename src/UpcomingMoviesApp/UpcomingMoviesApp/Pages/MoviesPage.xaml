@@ -23,7 +23,7 @@
 			                                                Source = "{Binding ImagePath}">
                                 </Image>
                                 <Label Text="{Binding Title}" />
-                                <Label Text="{Binding GenreIds}" />
+                                <Label Text="{Binding GenreNames}" />
                                 <Label Text="{Binding ReleaseDate}" />
                             </StackLayout>
                         </ViewCell>

@@ -74,6 +74,7 @@ namespace UpcomingMoviesApp.Models
         public string ReleaseDate { get; set; }
 
         public string ImagePath => $"{Settings.ImagesBaseUrl}{BackdropPath ?? PosterPath}";
+        public string GenreNames { get; set; }
     }
 
 }

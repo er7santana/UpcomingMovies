@@ -7,7 +7,7 @@ namespace UpcomingMoviesApp.ViewModels
     {
         public Movie Movie { get; set; }
         public string MovieTitle { get; set; }
-        public string GenreIds { get; set; }
+        public string GenreNames { get; set; }
         public string ReleaseData { get; set; }
         public string ImagePath { get; set; }
         public string Overview { get; set; }
@@ -20,7 +20,7 @@ namespace UpcomingMoviesApp.ViewModels
             {
                 Movie = movie;
                 MovieTitle = movie.Title;
-                //GenreIds = movie.GenreIds;
+                GenreNames = movie.GenreNames;
                 ReleaseData = movie.ReleaseDate;
                 ImagePath = movie.ImagePath;
                 Overview = movie.Overview;

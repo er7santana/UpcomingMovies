@@ -61,7 +61,7 @@ namespace UpcomingMoviesApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Movies.
+        ///   Looks up a localized string similar to Upcoming Movies.
         /// </summary>
         internal static string MoviesPageTitle {
             get {

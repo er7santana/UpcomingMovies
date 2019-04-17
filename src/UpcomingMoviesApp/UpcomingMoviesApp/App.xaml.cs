@@ -1,5 +1,6 @@
 ﻿using FreshMvvm;
 using UpcomingMoviesApp.Helpers;
+using UpcomingMoviesApp.Services.Genres;
 using UpcomingMoviesApp.Services.Movies;
 using UpcomingMoviesApp.ViewModels;
 using Xamarin.Forms;
@@ -18,21 +19,11 @@ namespace UpcomingMoviesApp
         private void InitializeIoC()
         {
             FreshIOC.Container.Register<IMovieService, MovieService>();
+            FreshIOC.Container.Register<IGenreService, GenreService>();
         }
 
         void InitializeNavigation()
         {
-            //var masterDetailNav = new ShaftMasterDetailNavigationContainer(NavigationContainerNames.MasterContainer);
-            //masterDetailNav.Init("", "menu");
-            //masterDetailNav.AddPage<VehiclesMapViewModel>("Vehicles", "car", null);
-            //masterDetailNav.AddPage<MyAccountViewModel>("My Account", "account", null);
-            //masterDetailNav.AddPage<DeliveriesViewModel>("Last Deliveries", "history", null);
-            //masterDetailNav.AddPage<MyJobsViewModel>("My Jobs", "date", null);
-            //masterDetailNav.AddPage<AlertsViewModel>("Alerts", "error", null);
-            //masterDetailNav.AddPage<NotificationsViewModel>("Notifications", "notifications", null);
-            //masterDetailNav.AddPage<TermsOfUseViewModel>("Terms Of Use", "description", null);
-            //masterDetailNav.AddLogout("Logout", "exit");
-
             var splashPage = FreshPageModelResolver.ResolvePageModel<SplashViewModel>();
             var splashNavigationContainer = new FreshNavigationContainer(splashPage, NavigationContainerNames.SplashContainer);
 
