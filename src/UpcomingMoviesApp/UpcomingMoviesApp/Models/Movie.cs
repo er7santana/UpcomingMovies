@@ -73,8 +73,9 @@ namespace UpcomingMoviesApp.Models
         [JsonProperty("release_date")]
         public string ReleaseDate { get; set; }
 
-        public string ImagePath => $"{Settings.ImagesBaseUrl}{BackdropPath ?? PosterPath}";
+        public string ImagePath => $"{Settings.ImagesW500BaseUrl}{BackdropPath ?? PosterPath}";
         public string GenreNames { get; set; }
+        public string PosterPathComplete => $"{Settings.ImagesOriginalBaseUrl}{PosterPath}";
     }
 
 }

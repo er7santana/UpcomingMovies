@@ -18,7 +18,7 @@
 			                                                DownsampleToViewSize="true"
 			                                                Source = "{Binding PosterPath}">
                                 </ffimageloading:CachedImage>-->
-                                <Image HorizontalOptions="Center" VerticalOptions="Center"
+                                <Image HorizontalOptions="Center" VerticalOptions="Start"
 			                                                WidthRequest="300" HeightRequest="300"
 			                                                Source = "{Binding ImagePath}">
                                 </Image>

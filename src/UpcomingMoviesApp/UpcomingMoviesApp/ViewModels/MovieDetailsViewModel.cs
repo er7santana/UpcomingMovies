@@ -8,7 +8,7 @@ namespace UpcomingMoviesApp.ViewModels
         public Movie Movie { get; set; }
         public string MovieTitle { get; set; }
         public string GenreNames { get; set; }
-        public string ReleaseData { get; set; }
+        public string ReleaseDate { get; set; }
         public string ImagePath { get; set; }
         public string Overview { get; set; }
 
@@ -21,8 +21,8 @@ namespace UpcomingMoviesApp.ViewModels
                 Movie = movie;
                 MovieTitle = movie.Title;
                 GenreNames = movie.GenreNames;
-                ReleaseData = movie.ReleaseDate;
-                ImagePath = movie.ImagePath;
+                ReleaseDate = movie.ReleaseDate;
+                ImagePath = movie.PosterPathComplete;
                 Overview = movie.Overview;
             }
         }

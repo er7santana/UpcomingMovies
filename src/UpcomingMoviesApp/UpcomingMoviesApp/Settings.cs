@@ -8,6 +8,7 @@
 
         public static string BackEndBaseUrl = "";
 
-        public static string ImagesBaseUrl = "https://image.tmdb.org/t/p/w500";
+        public static string ImagesW500BaseUrl = "https://image.tmdb.org/t/p/w500";
+        public static string ImagesOriginalBaseUrl = "https://image.tmdb.org/t/p/original";
     }
 }
