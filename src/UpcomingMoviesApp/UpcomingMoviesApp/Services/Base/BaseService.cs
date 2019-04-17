@@ -10,11 +10,9 @@ namespace UpcomingMoviesApp.Services.Base
     public class BaseService
     {
         protected HttpClient client;
-        protected string ControllerRoutePrefix { get; set; }
 
-        public BaseService(string controllerRoutePrefix = "")
+        public BaseService()
         {
-            ControllerRoutePrefix = controllerRoutePrefix;
             client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
         }
@@ -45,12 +43,12 @@ namespace UpcomingMoviesApp.Services.Base
 
         protected async Task<HttpResponseMessage> GetFromWebApi(string actionRoute)
         {
-            return await client.GetAsync($"{Settings.BackEndBaseUrl}/{ControllerRoutePrefix}/{actionRoute}").ConfigureAwait(false);
+            return await client.GetAsync(actionRoute).ConfigureAwait(false);
         }
 
         protected async Task<HttpResponseMessage> DeleteAsync(string actionRoute)
         {
-            return await client.DeleteAsync($"{Settings.BackEndBaseUrl}/{ControllerRoutePrefix}/{actionRoute}").ConfigureAwait(false);
+            return await client.DeleteAsync(actionRoute).ConfigureAwait(false);
         }
 
         protected async Task<TResult> PostToWebApi<TResult>(string actionRoute, object itemToPost) where TResult : class
@@ -69,7 +67,7 @@ namespace UpcomingMoviesApp.Services.Base
         {
             var json = JsonConvert.SerializeObject(obj);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
-            return await client.PostAsync($"{Settings.BackEndBaseUrl}/{ControllerRoutePrefix}/{actionRoute}", content);
+            return await client.PostAsync(actionRoute, content);
         }
 
         protected async Task<T> DeserializeJson<T>(HttpResponseMessage message) where T : class

@@ -4,13 +4,36 @@
              x:Class="UpcomingMoviesApp.Pages.MoviesPage"
              xmlns:extensions="clr-namespace:UpcomingMoviesApp.MarkupExtensions;assembly=UpcomingMoviesApp"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:behaviors="clr-namespace:UpcomingMoviesApp.Behaviors;assembly=UpcomingMoviesApp"
              Title="{extensions:Translate MoviesPageTitle}">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="{extensions:Translate MoviesPageTitle}"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Button Text="{extensions:Translate OK}" Command="{Binding MovieSelectedCommand}" />
+            <ListView ItemsSource="{Binding Movies}" CachingStrategy="RecycleElement" SeparatorVisibility="None" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <!--<ffimageloading:CachedImage HorizontalOptions="Center" VerticalOptions="Center"
+			                                                WidthRequest="300" HeightRequest="300"
+			                                                DownsampleToViewSize="true"
+			                                                Source = "{Binding PosterPath}">
+                                </ffimageloading:CachedImage>-->
+                                <Image HorizontalOptions="Center" VerticalOptions="Center"
+			                                                WidthRequest="300" HeightRequest="300"
+			                                                Source = "{Binding ImagePath}">
+                                </Image>
+                                <Label Text="{Binding Title}" />
+                                <Label Text="{Binding GenreIds}" />
+                                <Label Text="{Binding ReleaseDate}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.Behaviors>
+                    <behaviors:EventToCommandBehavior EventName="ItemTapped" Command="{Binding SelectMovieCommand}" EventArgsConverter="{StaticResource ItemTappedEventArgsConverter}" />
+                </ListView.Behaviors>
+            </ListView>
+            <Button Text="Search" Command="{Binding SearchCommand}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

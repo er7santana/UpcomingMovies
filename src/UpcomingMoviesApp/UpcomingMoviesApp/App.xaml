@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:UpcomingMoviesApp.Converters;assembly=UpcomingMoviesApp"
              x:Class="UpcomingMoviesApp.App">
     <Application.Resources>
         <ResourceDictionary>
@@ -50,6 +51,7 @@
             <OnPlatform x:TypeArguments="FontAttributes" x:Key="BaseButtonFontAttributes" Android="None" iOS="None" />
 
             <!-- CONVERTERS -->
+            <converters:ItemTappedEventArgsConverter x:Key="ItemTappedEventArgsConverter" />
 
             <!-- EXPLICIT STYLES -->
             <Style x:Key="EntryStyle" TargetType="{x:Type Entry}">

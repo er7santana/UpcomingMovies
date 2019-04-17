@@ -4,8 +4,9 @@ using UpcomingMoviesApp.Models;
 
 namespace UpcomingMoviesApp.Services.Movies
 {
-    interface IMovieService
+    public interface IMovieService
     {
         Task<ObservableCollection<Movie>> GetUpComingMoviesAsync(int page, string language);
+        Task<MovieApiReturn> GetUpcomingMoviesDataAsync(int page, string language);
     }
 }
