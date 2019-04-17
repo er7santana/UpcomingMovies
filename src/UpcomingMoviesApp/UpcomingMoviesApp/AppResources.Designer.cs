@@ -61,6 +61,33 @@ namespace UpcomingMoviesApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to There is no network available. Please, check your connection.
+        /// </summary>
+        internal static string ErrorNoConnection {
+            get {
+                return ResourceManager.GetString("ErrorNoConnection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string ErrorSearchingGenres {
+            get {
+                return ResourceManager.GetString("ErrorSearchingGenres", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error .
+        /// </summary>
+        internal static string ErrorSearchingMovies {
+            get {
+                return ResourceManager.GetString("ErrorSearchingMovies", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Upcoming Movies.
         /// </summary>
         internal static string MoviesPageTitle {

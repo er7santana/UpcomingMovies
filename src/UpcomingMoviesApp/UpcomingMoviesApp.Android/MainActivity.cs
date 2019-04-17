@@ -17,7 +17,7 @@ namespace UpcomingMoviesApp.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             //Xamarin.Forms.Forms.SetFlags("FastRenderers_Experimental");
-            //FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
+            //FFImageLoading.Forms.Platform.CachedImageRenderer.Init(false);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
             LoadApplication(new App());

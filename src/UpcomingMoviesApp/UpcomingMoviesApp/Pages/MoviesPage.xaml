@@ -5,10 +5,11 @@
              xmlns:extensions="clr-namespace:UpcomingMoviesApp.MarkupExtensions;assembly=UpcomingMoviesApp"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:behaviors="clr-namespace:UpcomingMoviesApp.Behaviors;assembly=UpcomingMoviesApp"
+             xmlns:controls="clr-namespace:UpcomingMoviesApp.Controls;assembly=UpcomingMoviesApp"
              Title="{extensions:Translate MoviesPageTitle}">
     <ContentPage.Content>
-        <StackLayout>
-            <ListView ItemsSource="{Binding Movies}" CachingStrategy="RecycleElement" SeparatorVisibility="None" HasUnevenRows="True">
+        <Grid>
+            <controls:InfiniteListView ItemsSource="{Binding Movies}" SeparatorVisibility="None" HasUnevenRows="True" LoadMoreCommand="{Binding SearchCommand}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -32,8 +33,8 @@
                 <ListView.Behaviors>
                     <behaviors:EventToCommandBehavior EventName="ItemTapped" Command="{Binding SelectMovieCommand}" EventArgsConverter="{StaticResource ItemTappedEventArgsConverter}" />
                 </ListView.Behaviors>
-            </ListView>
-            <Button Text="Search" Command="{Binding SearchCommand}" />
-        </StackLayout>
+            </controls:InfiniteListView>
+            <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" />
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

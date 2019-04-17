@@ -1,12 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using UpcomingMoviesApp.Models;
 using UpcomingMoviesApp.Services.Genres;
 using UpcomingMoviesApp.Services.Movies;
 using UpcomingMoviesApp.ViewModels.Base;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace UpcomingMoviesApp.ViewModels
@@ -32,30 +35,90 @@ namespace UpcomingMoviesApp.ViewModels
 
         public override async void Init(object initData)
         {
-            Genres = await genreService.GetAllAsync(CultureInfo.CurrentCulture.Name);
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                await DisplayAlert(AppResources.ErrorNoConnection);
+            }
+            else
+            {
+                await SearchGenresAsync();
+                await SearchMoviesAsync();
+            }
+        }
+
+        private async Task SearchGenresAsync()
+        {
+            if (IsBusy)
+            {
+                return;
+            }
+
+            IsBusy = true;
+            try
+            {
+                Genres = await genreService.GetAllAsync(CultureInfo.CurrentCulture.Name);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                await DisplayAlert(AppResources.ErrorSearchingGenres);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
         async Task SearchMoviesAsync()
         {
-            var moviesData = await movieService.GetUpcomingMoviesDataAsync(CurrentPage, CultureInfo.CurrentCulture.Name);
-            if (moviesData != null)
+            if (IsBusy)
             {
-                TotalPages = moviesData.TotalPages;
-                TotalResults = moviesData.TotalResults;
+                return;
+            }
 
-                for (int i = 0; i < moviesData.Movies.Length; i++)
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                await DisplayAlert(AppResources.ErrorNoConnection);
+                return;
+            }
+
+            IsBusy = true;
+            try
+            {
+                if (!Genres.Any())
                 {
-                    moviesData.Movies[i].GenreNames = genreService.GetGenreNames(moviesData.Movies[i].GenreIds, Genres);
-                    Movies.Add(moviesData.Movies[i]);
+                    await SearchGenresAsync();
                 }
-            }
-            else
-            {
-                TotalPages = 0;
-            }
 
-            CurrentPage++;
-            GetMoreResults = TotalPages > 0 && CurrentPage < TotalPages;
+                var moviesData = await movieService.GetUpcomingMoviesDataAsync(CurrentPage, CultureInfo.CurrentCulture.Name);
+                if (moviesData != null)
+                {
+                    TotalPages = moviesData.TotalPages;
+                    TotalResults = moviesData.TotalResults;
+
+                    for (int i = 0; i < moviesData.Movies.Length; i++)
+                    {
+                        moviesData.Movies[i].GenreNames = genreService.GetGenreNames(moviesData.Movies[i].GenreIds, Genres);
+                        Movies.Add(moviesData.Movies[i]);
+                    }
+                }
+                else
+                {
+                    TotalPages = 0;
+                }
+
+                CurrentPage++;
+                GetMoreResults = TotalPages > 0 && CurrentPage < TotalPages;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                await DisplayAlert(AppResources.ErrorSearchingMovies);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
         async Task OnSelectedMovieCommand(Movie movie)
