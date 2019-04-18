@@ -14,15 +14,15 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout>
-                                <!--<ffimageloading:CachedImage HorizontalOptions="Center" VerticalOptions="Center"
+                                <ffimageloading:CachedImage HorizontalOptions="Center" VerticalOptions="Center"
 			                                                WidthRequest="300" HeightRequest="300"
 			                                                DownsampleToViewSize="true"
-			                                                Source = "{Binding PosterPath}">
-                                </ffimageloading:CachedImage>-->
-                                <Image HorizontalOptions="Center" VerticalOptions="Start"
+			                                                Source = "{Binding ImagePath}">
+                                </ffimageloading:CachedImage>
+                                <!--<Image HorizontalOptions="Center" VerticalOptions="Start"
 			                                                WidthRequest="300" HeightRequest="300"
 			                                                Source = "{Binding ImagePath}">
-                                </Image>
+                                </Image>-->
                                 <Label Text="{Binding Title}" />
                                 <Label Text="{Binding GenreNames}" />
                                 <Label Text="{Binding ReleaseDate}" />

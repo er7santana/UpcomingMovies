@@ -2,6 +2,7 @@
 using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
+using FFImageLoading.Forms.Droid;
 
 namespace UpcomingMoviesApp.Droid
 {
@@ -16,8 +17,7 @@ namespace UpcomingMoviesApp.Droid
             base.OnCreate(savedInstanceState);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-            //Xamarin.Forms.Forms.SetFlags("FastRenderers_Experimental");
-            //FFImageLoading.Forms.Platform.CachedImageRenderer.Init(false);
+            CachedImageRenderer.Init(false);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
             LoadApplication(new App());

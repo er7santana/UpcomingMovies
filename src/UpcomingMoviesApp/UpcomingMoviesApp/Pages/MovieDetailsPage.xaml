@@ -1,20 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="UpcomingMoviesApp.Pages.MovieDetailsPage">
     <ContentPage.Content>
         <ScrollView Padding="0">
             <StackLayout Spacing="0">
-                <!--<ffimageloading:CachedImage HorizontalOptions="Center" VerticalOptions="Center"
-			                                                WidthRequest="300" HeightRequest="300"
-			                                                DownsampleToViewSize="true"
-			                                                Source = "{Binding PosterPath}">
-                                </ffimageloading:CachedImage>-->
-                <Image HorizontalOptions="Center" VerticalOptions="Start"
-			                                                WidthRequest="500"
-			                                                Source = "{Binding ImagePath}"
-                       Aspect="AspectFit">
-                </Image>
+                <ffimageloading:CachedImage HorizontalOptions="Center" VerticalOptions="Start" WidthRequest="500" Source = "{Binding ImagePath}" Aspect="AspectFit" />
+                <!--<Image HorizontalOptions="Center" VerticalOptions="Start" WidthRequest="500" Source = "{Binding ImagePath}" Aspect="AspectFit" />-->
                 <Label Text="{Binding MovieTitle}" />
                 <Label Text="{Binding GenreNames}" />
                 <Label Text="{Binding ReleaseDate}" />
