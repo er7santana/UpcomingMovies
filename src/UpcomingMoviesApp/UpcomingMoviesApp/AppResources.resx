@@ -132,4 +132,13 @@
   <data name="OK" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="SearchMovies" xml:space="preserve">
+    <value>Search movies</value>
+  </data>
+  <data name="TypeAtLeast5CharactersToSearch" xml:space="preserve">
+    <value>Type at least 5 characters to search</value>
+  </data>
+  <data name="NoRecordsFound" xml:space="preserve">
+    <value>No records found</value>
+  </data>
 </root>

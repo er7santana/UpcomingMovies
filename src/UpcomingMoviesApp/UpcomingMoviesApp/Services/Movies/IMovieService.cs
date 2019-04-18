@@ -8,5 +8,6 @@ namespace UpcomingMoviesApp.Services.Movies
     {
         Task<ObservableCollection<Movie>> GetUpComingMoviesAsync(int page, string language);
         Task<MovieApiReturn> GetUpcomingMoviesDataAsync(int page, string language);
+        Task<MovieApiReturn> GetMoviesAsync(int page, string language, string query);
     }
 }

@@ -19,13 +19,13 @@ namespace UpcomingMoviesApp.ViewModels
         private readonly IMovieService movieService;
         private readonly IGenreService genreService;
         public ICommand SelectMovieCommand => new Command<Movie>(async (movie) => await OnSelectedMovieCommand(movie));
-        public ICommand SearchCommand => new Command(async () => await SearchMoviesAsync());
+        public ICommand LoadMoviesCommand => new Command(async () => await GetUpcomingMoviesAsync());
+        public ICommand SearchMoviesCommand => new Command(async () => await GoToSearchMoviesAsync());
         public List<Genre> Genres { get; set; } = new List<Genre>();
         public ObservableCollection<Movie> Movies { get; set; } = new ObservableCollection<Movie>();
-        public int CurrentPage { get; set; } = 1;
+        public int CurrentPageNumber { get; set; } = 1;
         public int TotalPages { get; set; } = 0;
-        public int TotalResults { get; set; }
-        public bool GetMoreResults { get; set; } = false;
+        public bool GetMoreResults { get; set; } = true;
 
         public UpcomingMoviesViewModel(IMovieService movieService, IGenreService genreService)
         {
@@ -41,12 +41,12 @@ namespace UpcomingMoviesApp.ViewModels
             }
             else
             {
-                await SearchGenresAsync();
-                await SearchMoviesAsync();
+                await GetGenresAsync();
+                await GetUpcomingMoviesAsync();
             }
         }
 
-        private async Task SearchGenresAsync()
+        private async Task GetGenresAsync()
         {
             if (IsBusy)
             {
@@ -69,8 +69,13 @@ namespace UpcomingMoviesApp.ViewModels
             }
         }
 
-        async Task SearchMoviesAsync()
+        async Task GetUpcomingMoviesAsync()
         {
+            if (!GetMoreResults)
+            {
+                return;
+            }
+
             if (IsBusy)
             {
                 return;
@@ -87,14 +92,13 @@ namespace UpcomingMoviesApp.ViewModels
             {
                 if (!Genres.Any())
                 {
-                    await SearchGenresAsync();
+                    await GetGenresAsync();
                 }
 
-                var moviesData = await movieService.GetUpcomingMoviesDataAsync(CurrentPage, CultureInfo.CurrentCulture.Name);
+                var moviesData = await movieService.GetUpcomingMoviesDataAsync(CurrentPageNumber, CultureInfo.CurrentCulture.Name);
                 if (moviesData != null)
                 {
                     TotalPages = moviesData.TotalPages;
-                    TotalResults = moviesData.TotalResults;
 
                     for (int i = 0; i < moviesData.Movies.Length; i++)
                     {
@@ -107,8 +111,8 @@ namespace UpcomingMoviesApp.ViewModels
                     TotalPages = 0;
                 }
 
-                CurrentPage++;
-                GetMoreResults = TotalPages > 0 && CurrentPage < TotalPages;
+                CurrentPageNumber++;
+                GetMoreResults = TotalPages > 0 && CurrentPageNumber < TotalPages;
             }
             catch (Exception ex)
             {
@@ -127,6 +131,11 @@ namespace UpcomingMoviesApp.ViewModels
             {
                 await CoreMethods.PushPageModel<MovieDetailsViewModel>(movie);
             }
+        }
+
+        async Task GoToSearchMoviesAsync()
+        {
+            await CoreMethods.PushPageModel<SearchMoviesViewModel>(Genres);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:converters="clr-namespace:UpcomingMoviesApp.Converters;assembly=UpcomingMoviesApp"
@@ -135,9 +135,9 @@
             </Style>
 
             <Style TargetType="SearchBar">
-                <Setter Property="TextColor" Value="{StaticResource BackgroundColor}" />
-                <Setter Property="PlaceholderColor" Value="{StaticResource LightTextColor}" />
-                <Setter Property="BackgroundColor" Value="{StaticResource SeparatorLineColor}" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="PlaceholderColor" Value="Silver" />
+                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}" />
             </Style>
 
         </ResourceDictionary>
