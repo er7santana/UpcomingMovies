@@ -9,24 +9,22 @@
              Title="{extensions:Translate MoviesPageTitle}">
     <ContentPage.Content>
         <Grid>
-            <controls:InfiniteListView ItemsSource="{Binding Movies}" SeparatorVisibility="None" HasUnevenRows="True" LoadMoreCommand="{Binding SearchCommand}">
+            <controls:InfiniteListView ItemsSource="{Binding Movies}" SeparatorVisibility="None" HasUnevenRows="True" LoadMoreCommand="{Binding SearchCommand}" SelectionMode="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout>
-                                <ffimageloading:CachedImage HorizontalOptions="Center" VerticalOptions="Center"
-			                                                WidthRequest="300" HeightRequest="300"
-			                                                DownsampleToViewSize="true"
-			                                                Source = "{Binding ImagePath}">
-                                </ffimageloading:CachedImage>
-                                <!--<Image HorizontalOptions="Center" VerticalOptions="Start"
-			                                                WidthRequest="300" HeightRequest="300"
-			                                                Source = "{Binding ImagePath}">
-                                </Image>-->
-                                <Label Text="{Binding Title}" />
-                                <Label Text="{Binding GenreNames}" />
-                                <Label Text="{Binding ReleaseDate}" />
-                            </StackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="200" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <ffimageloading:CachedImage Aspect="AspectFill" HeightRequest="150" DownsampleToViewSize="true" Source="{Binding ImagePath}" />
+                                <Label Grid.Row="1" Text="{Binding Title}" />
+                                <Label Grid.Row="2" Text="{Binding GenreNames}" />
+                                <Label Grid.Row="3" Text="{Binding ReleaseDate}" />
+                            </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

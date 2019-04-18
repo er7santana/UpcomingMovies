@@ -4,15 +4,21 @@
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="UpcomingMoviesApp.Pages.MovieDetailsPage">
     <ContentPage.Content>
-        <ScrollView Padding="0">
-            <StackLayout Spacing="0">
-                <ffimageloading:CachedImage HorizontalOptions="Center" VerticalOptions="Start" WidthRequest="500" Source = "{Binding ImagePath}" Aspect="AspectFit" />
-                <!--<Image HorizontalOptions="Center" VerticalOptions="Start" WidthRequest="500" Source = "{Binding ImagePath}" Aspect="AspectFit" />-->
-                <Label Text="{Binding MovieTitle}" />
-                <Label Text="{Binding GenreNames}" />
-                <Label Text="{Binding ReleaseDate}" />
-                <Label Text="{Binding Overview}" />
-            </StackLayout>
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="500" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <ffimageloading:CachedImage Aspect="AspectFill" HeightRequest="450" DownsampleToViewSize="true" Source="{Binding ImagePath}" />
+                <Label Grid.Row="1" Text="{Binding MovieTitle}" />
+                <Label Grid.Row="2" Text="{Binding GenreNames}" />
+                <Label Grid.Row="3" Text="{Binding ReleaseDate}" />
+                <Label Grid.Row="4" Text="{Binding Overview}" />
+            </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
