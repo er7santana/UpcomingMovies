@@ -148,8 +148,11 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\UpcomingMoviesApp\UpcomingMoviesApp.csproj">
-      <Project>{04ADE689-120A-4070-B7C4-368F45A78A7C}</Project>
+      <Project>{4557CB11-DB54-4AEB-8D0B-48617ED95F03}</Project>
       <Name>UpcomingMoviesApp</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logo300.png" />
   </ItemGroup>
 </Project>

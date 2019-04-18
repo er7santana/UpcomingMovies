@@ -9,6 +9,7 @@ namespace UpcomingMoviesApp.Pages
         public UpcomingMoviesPage()
         {
             InitializeComponent();
+            NavigationPage.SetBackButtonTitle(this, "");
         }
     }
 }

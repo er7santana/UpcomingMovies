@@ -91,6 +91,7 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\drawable\logo300.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />
@@ -101,7 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UpcomingMoviesApp\UpcomingMoviesApp.csproj">
-      <Project>{04ADE689-120A-4070-B7C4-368F45A78A7C}</Project>
+      <Project>{4557CB11-DB54-4AEB-8D0B-48617ED95F03}</Project>
       <Name>UpcomingMoviesApp</Name>
     </ProjectReference>
   </ItemGroup>

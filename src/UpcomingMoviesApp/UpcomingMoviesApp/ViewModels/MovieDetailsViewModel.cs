@@ -24,6 +24,7 @@ namespace UpcomingMoviesApp.ViewModels
                 ReleaseDate = movie.ReleaseDate;
                 ImagePath = movie.PosterPathComplete;
                 Overview = movie.Overview;
+                Title = movie.Title;
             }
         }
     }
