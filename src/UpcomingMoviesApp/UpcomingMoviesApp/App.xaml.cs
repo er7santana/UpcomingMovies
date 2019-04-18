@@ -27,7 +27,7 @@ namespace UpcomingMoviesApp
             var splashPage = FreshPageModelResolver.ResolvePageModel<SplashViewModel>();
             var splashNavigationContainer = new FreshNavigationContainer(splashPage, NavigationContainerNames.SplashContainer);
 
-            var mainPage = FreshPageModelResolver.ResolvePageModel<MoviesViewModel>();
+            var mainPage = FreshPageModelResolver.ResolvePageModel<UpcomingMoviesViewModel>();
             _ = new FreshNavigationContainer(mainPage, NavigationContainerNames.MainContainer)
             {
                 BarBackgroundColor = (Color)Application.Current.Resources["PrimaryColor"],

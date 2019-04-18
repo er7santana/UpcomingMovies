@@ -14,7 +14,7 @@ using Xamarin.Forms;
 
 namespace UpcomingMoviesApp.ViewModels
 {
-    public class MoviesViewModel : BaseViewModel
+    public class UpcomingMoviesViewModel : BaseViewModel
     {
         private readonly IMovieService movieService;
         private readonly IGenreService genreService;
@@ -27,7 +27,7 @@ namespace UpcomingMoviesApp.ViewModels
         public int TotalResults { get; set; }
         public bool GetMoreResults { get; set; } = false;
 
-        public MoviesViewModel(IMovieService movieService, IGenreService genreService)
+        public UpcomingMoviesViewModel(IMovieService movieService, IGenreService genreService)
         {
             this.movieService = movieService;
             this.genreService = genreService;
