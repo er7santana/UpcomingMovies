@@ -13,7 +13,7 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid>
+                            <Grid RowSpacing="0">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="200" />
                                     <RowDefinition Height="Auto" />
@@ -21,9 +21,9 @@
                                     <RowDefinition Height="Auto" />
                                 </Grid.RowDefinitions>
                                 <ffimageloading:CachedImage Aspect="AspectFill" HeightRequest="150" DownsampleToViewSize="true" Source="{Binding ImagePath}" />
-                                <Label Grid.Row="1" Text="{Binding Title}" />
-                                <Label Grid.Row="2" Text="{Binding GenreNames}" />
-                                <Label Grid.Row="3" Text="{Binding ReleaseDate}" />
+                                <Label Grid.Row="1" Text="{Binding Title}" Style="{StaticResource MovieTitleStyle}" />
+                                <Label Grid.Row="2" Text="{Binding GenreNames}" Style="{StaticResource MovieAttributesStyle}" />
+                                <Label Grid.Row="3" Text="{Binding ReleaseDate}" Style="{StaticResource MovieAttributesStyle}" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
