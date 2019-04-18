@@ -39,8 +39,8 @@ namespace UpcomingMoviesApp.Pages
             if (SplashImage != null)
             {
                 await SplashImage.ScaleTo(1, 1200);
-                await SplashImage.ScaleTo(0.9, 1200, Easing.Linear);
-                await SplashImage.ScaleTo(150, 1200, Easing.Linear);
+                await SplashImage.ScaleTo(0.8, 1400, Easing.Linear);
+                await SplashImage.ScaleTo(150, 2000, Easing.CubicInOut);
             }
 
             MessagingCenter.Send(new MessagingParameter(), MessageKeys.SplashScreenAnimationFinished);
