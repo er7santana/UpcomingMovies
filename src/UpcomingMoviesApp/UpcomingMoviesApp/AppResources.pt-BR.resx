@@ -141,4 +141,13 @@
   <data name="NoRecordsFound" xml:space="preserve">
     <value>Nenhum registro encontrado</value>
   </data>
+  <data name="ActivityIndicator" xml:space="preserve">
+    <value>Carregando dados</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Voltar</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Buscar filmes</value>
+  </data>
 </root>

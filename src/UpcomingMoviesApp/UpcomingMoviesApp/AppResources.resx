@@ -121,10 +121,10 @@
     <value>There is no network available. Please, check your connection</value>
   </data>
   <data name="ErrorSearchingGenres" xml:space="preserve">
-    <value />
+    <value>Error retrieving genres</value>
   </data>
   <data name="ErrorSearchingMovies" xml:space="preserve">
-    <value>Error </value>
+    <value>Error retrieving movies</value>
   </data>
   <data name="MoviesPageTitle" xml:space="preserve">
     <value>Upcoming Movies</value>
@@ -140,5 +140,14 @@
   </data>
   <data name="NoRecordsFound" xml:space="preserve">
     <value>No records found</value>
+  </data>
+  <data name="ActivityIndicator" xml:space="preserve">
+    <value>Loading data</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search movies</value>
   </data>
 </root>

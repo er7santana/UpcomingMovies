@@ -35,7 +35,7 @@
                     <behaviors:EventToCommandBehavior EventName="ItemTapped" Command="{Binding SelectMovieCommand}" EventArgsConverter="{StaticResource ItemTappedEventArgsConverter}" />
                 </ListView.Behaviors>
             </controls:InfiniteListView>
-            <ActivityIndicator Grid.RowSpan="2" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+            <ActivityIndicator Grid.RowSpan="2" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" AutomationProperties.IsInAccessibleTree="true" AutomationProperties.Name="{extensions:Translate ActivityIndicator}"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

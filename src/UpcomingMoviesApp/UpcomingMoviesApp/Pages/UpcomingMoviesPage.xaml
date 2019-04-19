@@ -8,7 +8,7 @@
              xmlns:controls="clr-namespace:UpcomingMoviesApp.Controls;assembly=UpcomingMoviesApp"
              Title="{extensions:Translate MoviesPageTitle}">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="search" Command="{Binding SearchMoviesCommand}" />
+        <ToolbarItem Icon="search" Command="{Binding SearchMoviesCommand}" Text="{extensions:Translate Search}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid>
@@ -35,7 +35,7 @@
                     <behaviors:EventToCommandBehavior EventName="ItemTapped" Command="{Binding SelectMovieCommand}" EventArgsConverter="{StaticResource ItemTappedEventArgsConverter}" />
                 </ListView.Behaviors>
             </controls:InfiniteListView>
-            <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" />
+            <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" AutomationProperties.IsInAccessibleTree="true" AutomationProperties.Name="{extensions:Translate ActivityIndicator}"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
