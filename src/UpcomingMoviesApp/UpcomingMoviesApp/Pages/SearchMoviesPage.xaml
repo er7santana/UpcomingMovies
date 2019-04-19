@@ -11,7 +11,7 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <SearchBar Text="{Binding SearchTerm}" Placeholder="{extensions:Translate SearchMovies}" SearchCommand="{Binding SearchMoviesCommand}" />
+            <SearchBar Text="{Binding SearchTerm}" Placeholder="{extensions:Translate SearchMovies}" SearchCommand="{Binding SearchMoviesCommand}" AutomationProperties.IsInAccessibleTree="true" />
             <controls:InfiniteListView Grid.Row="1" ItemsSource="{Binding Movies}" SeparatorVisibility="None" HasUnevenRows="True" LoadMoreCommand="{Binding LoadMoreItemsCommand}" SelectionMode="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>

@@ -8,7 +8,7 @@
              xmlns:controls="clr-namespace:UpcomingMoviesApp.Controls;assembly=UpcomingMoviesApp"
              Title="{extensions:Translate MoviesPageTitle}">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="search" Command="{Binding SearchMoviesCommand}" Text="{extensions:Translate Search}" />
+        <ToolbarItem Icon="search" Command="{Binding SearchMoviesCommand}" AutomationProperties.IsInAccessibleTree="true" AutomationProperties.Name="{extensions:Translate SearchMovies}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid>
