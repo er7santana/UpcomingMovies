@@ -19,7 +19,7 @@ namespace UpcomingMoviesApp.Services.Genres
             return new List<Genre>();
         }
 
-        private string GetGenreName(int genreId, List<Genre> genres)
+        public string GetGenreName(int genreId, List<Genre> genres)
         {
             var genre = genres.FirstOrDefault(c => c.Id == genreId);
             if (genre == null)

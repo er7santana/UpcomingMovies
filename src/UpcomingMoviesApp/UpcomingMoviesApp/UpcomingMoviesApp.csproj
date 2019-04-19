@@ -64,7 +64,13 @@
     <None Update="Pages\MoviesPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <None Update="Pages\SearchMoviesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
     <None Update="Pages\SplashPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Pages\UpcomingMoviesPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
   </ItemGroup>

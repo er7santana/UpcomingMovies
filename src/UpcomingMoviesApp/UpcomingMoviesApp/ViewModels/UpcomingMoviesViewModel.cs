@@ -46,7 +46,7 @@ namespace UpcomingMoviesApp.ViewModels
             }
         }
 
-        private async Task GetGenresAsync()
+        public async Task GetGenresAsync()
         {
             if (IsBusy)
             {
@@ -69,7 +69,7 @@ namespace UpcomingMoviesApp.ViewModels
             }
         }
 
-        async Task GetUpcomingMoviesAsync()
+        public async Task GetUpcomingMoviesAsync()
         {
             if (!GetMoreResults)
             {

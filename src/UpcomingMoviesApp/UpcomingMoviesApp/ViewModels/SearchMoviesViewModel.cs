@@ -109,7 +109,7 @@ namespace UpcomingMoviesApp.ViewModels
             }
         }
 
-        async Task LoadMoreItemsAsync()
+        public async Task LoadMoreItemsAsync()
         {
             if (!GetMoreResults)
             {
@@ -144,7 +144,7 @@ namespace UpcomingMoviesApp.ViewModels
             }
         }
 
-        private async Task GetGenresAsync()
+        public async Task GetGenresAsync()
         {
             if (IsBusy)
             {
