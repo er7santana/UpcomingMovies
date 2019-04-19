@@ -2,6 +2,8 @@
 
 Project developed with Xamarin.Forms to build an app for iOS and Android that offers to the user the list of upcoming movies and their details. The app also allows the search of a movie by entering a partial or full movie name.
 
+All movies data is provided by [TMDb Api](https://developers.themoviedb.org/3).
+
 ## Third-party libraries used in the project
 
 
