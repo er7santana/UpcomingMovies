@@ -17,7 +17,9 @@ All movies data is provided by [TMDb Api](https://developers.themoviedb.org/3).
 | Microsoft.Net.Test.Sdk |[Nuget](https://www.nuget.org/packages/Microsoft.NET.Test.Sdk) [GitHub](https://github.com/microsoft/vstest/)| The MSbuild targets and properties for building .NET test projects | For building tests ||
 | NUnit |[Nuget](https://www.nuget.org/packages/NUnit) [GitHub](https://github.com/nunit/nunit)| NUnit features a fluent assert syntax, parameterized, generic and theory tests and is user-extensible | For building unit tests ||
 | NUnit3TestAdapter |[Nuget](https://www.nuget.org/packages/NUnit3TestAdapter) [GitHub](https://github.com/nunit/nunit3-vs-adapter)| A package including the NUnit 3 TestAdapter for Visual Studio 2012 onwards | For building unit tests ||
-
+| FluentAssertions |[Nuget](https://www.nuget.org/packages/FluentAssertions) [GitHub](https://github.com/fluentassertions/fluentassertions)| Fluent API for asserting the results of unit tests | To write tests asserts in a more natural way ||
+| Xamarin UI Test |[Nuget](https://www.nuget.org/packages/Xamarin.UITest) | UI Automation Framework for testing Android and iOS apps | To run automated UI Tests ||
+| Xamarin Test Cloud Agent |[Nuget](https://www.nuget.org/packages/Xamarin.TestCloud.Agent) [GitHub](https://github.com/calabash/calabash-ios-server) | Xamarin Test Cloud Agent | To allow the control of iOS simulator to run UI Tests ||
 
 ## Screenshots
 
