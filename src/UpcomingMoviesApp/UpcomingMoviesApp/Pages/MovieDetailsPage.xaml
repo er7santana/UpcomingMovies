@@ -14,10 +14,10 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <ffimageloading:CachedImage Aspect="AspectFill" HeightRequest="450" DownsampleToViewSize="true" Source="{Binding ImagePath}" />
-                <Label Grid.Row="1" Text="{Binding MovieTitle}" Style="{StaticResource MovieTitleStyle}"/>
-                <Label Grid.Row="2" Text="{Binding GenreNames}"  Style="{StaticResource MovieAttributesStyle}"/>
-                <Label Grid.Row="3" Text="{Binding ReleaseDate}"  Style="{StaticResource MovieAttributesStyle}"/>
-                <Label Grid.Row="4" Text="{Binding Overview}"  Style="{StaticResource MovieAttributesStyle}"/>
+                <Label Grid.Row="1" Text="{Binding MovieTitle}" Style="{StaticResource MovieTitleStyle}" AutomationId="Movie Title"/>
+                <Label Grid.Row="2" Text="{Binding GenreNames}"  Style="{StaticResource MovieAttributesStyle}" AutomationId="Genre"/>
+                <Label Grid.Row="3" Text="{Binding ReleaseDate}"  Style="{StaticResource MovieAttributesStyle}" AutomationId="Release date"/>
+                <Label Grid.Row="4" Text="{Binding Overview}"  Style="{StaticResource MovieAttributesStyle}" AutomationId="Overview"/>
             </Grid>
         </ScrollView>
     </ContentPage.Content>

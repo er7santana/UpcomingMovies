@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpcomingMoviesApp", "src\Up
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpcomingMoviesApp.UnitTest", "tests\UpcomingMoviesApp.UnitTest\UpcomingMoviesApp.UnitTest.csproj", "{6774AC1A-C2E8-494C-8380-C8ACD4D919E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpcomingMoviesApp.UITests", "tests\UpcomingMoviesApp.UITests\UpcomingMoviesApp.UITests.csproj", "{7C1082FE-4F0F-485B-B16C-9A63541114A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,18 @@ Global
 		{6774AC1A-C2E8-494C-8380-C8ACD4D919E5}.Release|iPhone.Build.0 = Release|Any CPU
 		{6774AC1A-C2E8-494C-8380-C8ACD4D919E5}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{6774AC1A-C2E8-494C-8380-C8ACD4D919E5}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{7C1082FE-4F0F-485B-B16C-9A63541114A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C1082FE-4F0F-485B-B16C-9A63541114A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C1082FE-4F0F-485B-B16C-9A63541114A6}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{7C1082FE-4F0F-485B-B16C-9A63541114A6}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{7C1082FE-4F0F-485B-B16C-9A63541114A6}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{7C1082FE-4F0F-485B-B16C-9A63541114A6}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{7C1082FE-4F0F-485B-B16C-9A63541114A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C1082FE-4F0F-485B-B16C-9A63541114A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C1082FE-4F0F-485B-B16C-9A63541114A6}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{7C1082FE-4F0F-485B-B16C-9A63541114A6}.Release|iPhone.Build.0 = Release|Any CPU
+		{7C1082FE-4F0F-485B-B16C-9A63541114A6}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{7C1082FE-4F0F-485B-B16C-9A63541114A6}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
