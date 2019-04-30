@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:extensions="clr-namespace:UpcomingMoviesApp.MarkupExtensions;assembly=UpcomingMoviesApp"
+             xmlns:behaviors="clr-namespace:UpcomingMoviesApp.Behaviors;assembly=UpcomingMoviesApp"
+             xmlns:controls="clr-namespace:UpcomingMoviesApp.Controls;assembly=UpcomingMoviesApp"
+             x:Class="UpcomingMoviesApp.Pages.SearchMoviesPage">
+    <ContentPage.Content>
+        <Grid RowSpacing="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <SearchBar Text="{Binding SearchTerm}" Placeholder="{extensions:Translate SearchMovies}" SearchCommand="{Binding SearchMoviesCommand}" AutomationProperties.IsInAccessibleTree="true" />
+            <controls:InfiniteListView Grid.Row="1" ItemsSource="{Binding Movies}" SeparatorVisibility="None" HasUnevenRows="True" LoadMoreCommand="{Binding LoadMoreItemsCommand}" SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid RowSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="200" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <ffimageloading:CachedImage Aspect="AspectFill" HeightRequest="150" DownsampleToViewSize="true" Source="{Binding ImagePath}" />
+                                <Label Grid.Row="1" Text="{Binding Title}" Style="{StaticResource MovieTitleStyle}" />
+                                <Label Grid.Row="2" Text="{Binding GenreNames}" Style="{StaticResource MovieAttributesStyle}" />
+                                <Label Grid.Row="3" Text="{Binding ReleaseDate}" Style="{StaticResource MovieAttributesStyle}" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.Behaviors>
+                    <behaviors:EventToCommandBehavior EventName="ItemTapped" Command="{Binding SelectMovieCommand}" EventArgsConverter="{StaticResource ItemTappedEventArgsConverter}" />
+                </ListView.Behaviors>
+            </controls:InfiniteListView>
+            <ActivityIndicator Grid.RowSpan="2" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" AutomationProperties.IsInAccessibleTree="true" AutomationProperties.Name="{extensions:Translate ActivityIndicator}"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
